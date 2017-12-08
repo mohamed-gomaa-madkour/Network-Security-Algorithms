@@ -8,15 +8,48 @@
 <?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.Tab?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
 
 <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="726.0" prefWidth="698.0" style="-fx-background-color: #f2f2f2;" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
    <children>
       <JFXTabPane layoutX="-2.0" layoutY="66.0" prefHeight="604.0" prefWidth="704.0" tabMinHeight="50.0" tabMinWidth="150.0">
          <tabs>
-            <Tab text="Home " />
+            <Tab text="Home ">
+               <content>
+                  <AnchorPane prefHeight="200.0" prefWidth="200.0">
+                     <children>
+                        <Text layoutX="63.0" layoutY="255.0" strokeType="OUTSIDE" strokeWidth="0.0" text="This Program Is Implementation For 3 Security  Algorithms" wrappingWidth="577.13671875">
+                           <font>
+                              <Font size="21.0" />
+                           </font>
+                        </Text>
+                        <Text layoutX="117.0" layoutY="300.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Caeser Cipher , Playfair ,Data Encryption Standerd" wrappingWidth="506.13671875">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Text>
+                        <Text layoutX="110.0" layoutY="342.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Data Encryption Standerd  Is 64 bit Block cipher,16 round " wrappingWidth="506.13671875">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Text>
+                        <Text layoutX="176.0" layoutY="393.0" strokeType="OUTSIDE" strokeWidth="0.0" text="supervisor  : Dr.Mohamed Moawed" wrappingWidth="506.13671875">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Text>
+                        <ImageView fitHeight="150.0" fitWidth="156.0" layoutX="257.0" layoutY="49.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@encryption2.png" />
+                           </image>
+                        </ImageView>
+                     </children></AnchorPane>
+               </content></Tab>
             <Tab text="Caeser Cipher">
                <content>
                   <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
@@ -52,7 +85,7 @@
                               <Font size="21.0" />
                            </font>
                         </JFXButton>
-                        <JFXPasswordField fx:id="saeser_cipher_key" layoutX="361.0" layoutY="514.0" promptText="Secret Key" unFocusColor="#3f14b5">
+                        <JFXPasswordField fx:id="saeser_cipher_key" layoutX="377.0" layoutY="514.0" promptText="Secret Key" unFocusColor="#3f14b5">
                            <font>
                               <Font size="15.0" />
                            </font>
@@ -128,7 +161,7 @@
                               <Font size="21.0" />
                            </font>
                         </JFXButton>
-                        <JFXPasswordField fx:id="play_cipher_key" layoutX="361.0" layoutY="514.0" promptText="Secret Keyword" unFocusColor="#3f14b5">
+                        <JFXPasswordField fx:id="play_cipher_key" layoutX="367.0" layoutY="514.0" promptText="Secret Keyword" unFocusColor="#3f14b5">
                            <font>
                               <Font size="15.0" />
                            </font>
@@ -139,7 +172,7 @@
             </Tab>
             <Tab text="Data Encryption  Standerd">
                <content>
-                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="582.0" prefWidth="704.0">
                      <children>
                         <JFXButton fx:id="file_chooser" layoutX="277.0" layoutY="9.0" onAction="#file_chooser" prefHeight="45.0" prefWidth="151.0" text="FileChooser" textAlignment="CENTER" textFill="#37129e" underline="true">
                            <font>
@@ -184,6 +217,11 @@
       <Label layoutX="219.0" layoutY="696.0" style="-fx-background-color: #adebad;" text="Programed By Mohamed Gomaa Madkour" textFill="#1b0c4a" underline="true">
          <font>
             <Font size="16.0" />
+         </font>
+      </Label>
+      <Label layoutX="144.0" layoutY="14.0" text="Network Security Algorithms ">
+         <font>
+            <Font size="29.0" />
          </font>
       </Label>
    </children>
