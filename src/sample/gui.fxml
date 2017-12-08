@@ -12,9 +12,9 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="712.0" prefWidth="698.0" style="-fx-background-color: #  #f2f2f2;" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="726.0" prefWidth="698.0" style="-fx-background-color: #f2f2f2;" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
    <children>
-      <JFXTabPane layoutX="-2.0" layoutY="66.0" prefHeight="604.0" prefWidth="704.0">
+      <JFXTabPane layoutX="-2.0" layoutY="66.0" prefHeight="604.0" prefWidth="704.0" tabMinHeight="50.0" tabMinWidth="150.0">
          <tabs>
             <Tab text="Home " />
             <Tab text="Saeser Cipher">
@@ -42,7 +42,7 @@
                               <Insets bottom="20.0" left="30.0" right="30.0" top="20.0" />
                            </padding>
                         </JFXTextArea>
-                        <JFXPasswordField fx:id="saeser_plain_key" layoutX="377.0" layoutY="246.0" promptText="your key default 3" unFocusColor="#3f14b5">
+                        <JFXPasswordField fx:id="saeser_plain_key" layoutX="377.0" layoutY="246.0" promptText="Secret Key" unFocusColor="#3f14b5">
                            <font>
                               <Font size="15.0" />
                            </font>
@@ -52,7 +52,7 @@
                               <Font size="21.0" />
                            </font>
                         </JFXButton>
-                        <JFXPasswordField fx:id="saeser_cipher_key" layoutX="361.0" layoutY="514.0" promptText="your key default 3" unFocusColor="#3f14b5">
+                        <JFXPasswordField fx:id="saeser_cipher_key" layoutX="361.0" layoutY="514.0" promptText="Secret Key" unFocusColor="#3f14b5">
                            <font>
                               <Font size="15.0" />
                            </font>
@@ -118,7 +118,7 @@
                               <Insets bottom="20.0" left="30.0" right="30.0" top="20.0" />
                            </padding>
                         </JFXTextArea>
-                        <JFXPasswordField fx:id="play_plain_key" layoutX="377.0" layoutY="246.0" promptText="your key default 3" unFocusColor="#3f14b5">
+                        <JFXPasswordField fx:id="play_plain_key" layoutX="377.0" layoutY="246.0" promptText="Secret Key" unFocusColor="#3f14b5">
                            <font>
                               <Font size="15.0" />
                            </font>
@@ -128,7 +128,7 @@
                               <Font size="21.0" />
                            </font>
                         </JFXButton>
-                        <JFXPasswordField fx:id="play_cipher_key" layoutX="361.0" layoutY="514.0" promptText="your key default 3" unFocusColor="#3f14b5">
+                        <JFXPasswordField fx:id="play_cipher_key" layoutX="361.0" layoutY="514.0" promptText="Secret Key" unFocusColor="#3f14b5">
                            <font>
                               <Font size="15.0" />
                            </font>
@@ -154,7 +154,7 @@
                               <Font size="21.0" />
                            </font>
                         </JFXButton>
-                        <JFXPasswordField fx:id="des_plain_key" layoutX="377.0" layoutY="246.0" promptText="your key default 3" unFocusColor="#3f14b5">
+                        <JFXPasswordField fx:id="des_plain_key" layoutX="377.0" layoutY="246.0" promptText="Secret Key" unFocusColor="#3f14b5">
                            <font>
                               <Font size="15.0" />
                            </font>
@@ -172,7 +172,7 @@
                               <Font size="21.0" />
                            </font>
                         </JFXButton>
-                        <JFXPasswordField fx:id="des_cipher_key" layoutX="361.0" layoutY="514.0" promptText="your key default 3" unFocusColor="#3f14b5">
+                        <JFXPasswordField fx:id="des_cipher_key" layoutX="361.0" layoutY="514.0" promptText="Secret Key" unFocusColor="#3f14b5">
                            <font>
                               <Font size="15.0" />
                            </font>
@@ -186,7 +186,7 @@
             <Cursor fx:constant="HAND" />
          </cursor>
       </JFXTabPane>
-      <Label layoutX="219.0" layoutY="670.0" text="Programed By Mohamed Gomaa Madkour" textFill="#1b0c4a" underline="true">
+      <Label layoutX="219.0" layoutY="696.0" text="Programed By Mohamed Gomaa Madkour" textFill="#1b0c4a" underline="true">
          <font>
             <Font size="16.0" />
          </font>
