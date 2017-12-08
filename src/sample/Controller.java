@@ -11,6 +11,7 @@ public class Controller {
     String plain_text;
     String key;
 
+
     @FXML
     private JFXTextArea saeser_plain_text;
 
@@ -73,15 +74,35 @@ public class Controller {
     @FXML
     void des_encryption(ActionEvent event) {
 
+
+
     }
 
     @FXML
     void play_decryption(ActionEvent event) {
+        PlayFair Pf;
+        cipher_text=play_cipher_text.getText();
+        key=play_cipher_key.getText();
+        if(key != null && !key.isEmpty()&&cipher_text!=null&&!cipher_text.isEmpty()) {
+            Pf=new PlayFair(key);
+            play_plain_text.setText(Pf.decode(Pf.parseString(cipher_text)));
+        }
+        else play_cipher_text.setText( "please enter cipher text and Secret Keyword ");
 
     }
 
     @FXML
     void play_encryption(ActionEvent event) {
+        //String output = cipher(input);
+
+        PlayFair Pf;
+        plain_text=play_plain_text.getText();
+        key=play_plain_key.getText();
+        if(key != null && !key.isEmpty()&&plain_text!=null&&!plain_text.isEmpty()) {
+            Pf=new PlayFair(key);
+            play_cipher_text.setText(Pf.cipher(Pf.parseString(plain_text)));
+        }
+        else play_cipher_text.setText( "please enter plain text and Secret Keyword ");
 
     }
 
