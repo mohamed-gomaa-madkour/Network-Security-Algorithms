@@ -5,13 +5,20 @@ import com.jfoenix.controls.JFXPasswordField;
 import com.jfoenix.controls.JFXTextArea;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.stage.FileChooser;
+import javafx.stage.Stage;
+
+import java.io.File;
+import java.nio.ByteBuffer;
 
 public class Controller {
     String cipher_text;
     String plain_text;
     String key;
 
-
+    File file;
+    public static long[]des_cipher;
+    public static long[] des_plain;
     @FXML
     private JFXTextArea saeser_plain_text;
 
@@ -49,7 +56,7 @@ public class Controller {
     private JFXPasswordField play_cipher_key;
 
     @FXML
-    private JFXTextArea des_plain_text;
+    public JFXTextArea des_plain_text;
 
     @FXML
     private JFXButton des_plain_encrypt;
@@ -58,13 +65,26 @@ public class Controller {
     private JFXPasswordField des_plain_key;
 
     @FXML
-    private JFXTextArea des_cipher_text;
+    public JFXTextArea des_cipher_text;
 
     @FXML
     private JFXButton des_cipher_decrypt;
 
     @FXML
     private JFXPasswordField des_cipher_key;
+
+
+    @FXML
+    void file_chooser(ActionEvent event) {
+        FileChooser fileChooser = new FileChooser();
+        FileChooser.ExtensionFilter extFilter = new FileChooser.ExtensionFilter("TXT files (*.txt)", "*.txt");
+        fileChooser.getExtensionFilters().add(extFilter);
+        Stage primaryStage = null;
+        file = fileChooser.showOpenDialog(primaryStage);
+        des_plain_encrypt.setDisable(false);
+        System.out.println(file);
+
+    }
 
     @FXML
     void des_decryption(ActionEvent event) {
@@ -73,6 +93,40 @@ public class Controller {
 
     @FXML
     void des_encryption(ActionEvent event) {
+        key=des_plain_key.getText();
+        byte[] bytes;
+        String s="";
+
+
+        if(key != null && !key.isEmpty()) {
+            DESInterface desInterface=new DESInterface(file,key);
+
+            for (long block : des_cipher) {
+                bytes = ByteBuffer.allocate(8).putLong(block).array();
+
+                s+=new String(bytes);///
+
+
+            }
+
+            des_cipher_text.setText(s);
+            s="";
+
+
+            for (long block : des_plain) {
+                bytes = ByteBuffer.allocate(8).putLong(block).array();
+
+                s+=new String(bytes);///
+
+            }
+
+            des_plain_text.setText(s);
+            s="";
+        }
+        else des_cipher_text.setText( "please chooce file and Secret Keyword ");
+
+
+
 
 
 

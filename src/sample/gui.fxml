@@ -17,7 +17,7 @@
       <JFXTabPane layoutX="-2.0" layoutY="66.0" prefHeight="604.0" prefWidth="704.0" tabMinHeight="50.0" tabMinWidth="150.0">
          <tabs>
             <Tab text="Home " />
-            <Tab text="Saeser Cipher">
+            <Tab text="Caeser Cipher">
                <content>
                   <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                      <children>
@@ -118,7 +118,7 @@
                               <Insets bottom="20.0" left="30.0" right="30.0" top="20.0" />
                            </padding>
                         </JFXTextArea>
-                        <JFXPasswordField fx:id="play_plain_key" layoutX="377.0" layoutY="246.0" promptText="Secret Key" unFocusColor="#3f14b5">
+                        <JFXPasswordField fx:id="play_plain_key" layoutX="377.0" layoutY="246.0" promptText="Secret Keyword" unFocusColor="#3f14b5">
                            <font>
                               <Font size="15.0" />
                            </font>
@@ -128,7 +128,7 @@
                               <Font size="21.0" />
                            </font>
                         </JFXButton>
-                        <JFXPasswordField fx:id="play_cipher_key" layoutX="361.0" layoutY="514.0" promptText="Secret Key" unFocusColor="#3f14b5">
+                        <JFXPasswordField fx:id="play_cipher_key" layoutX="361.0" layoutY="514.0" promptText="Secret Keyword" unFocusColor="#3f14b5">
                            <font>
                               <Font size="15.0" />
                            </font>
@@ -141,7 +141,17 @@
                <content>
                   <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                      <children>
-                        <JFXTextArea fx:id="des_plain_text" layoutX="90.0" layoutY="30.0" prefHeight="203.0" prefWidth="541.0" promptText="enter your plain text  here then  press encrypt buttom" style="-fx-background-color: #f2f2f2; -fx-background-radius: 40; -fx-border-color: #8c8c8c; -fx-border-radius: 40;" unFocusColor="#1bb915">
+                        <JFXButton fx:id="file_chooser" layoutX="277.0" layoutY="9.0" onAction="#file_chooser" prefHeight="45.0" prefWidth="151.0" text="FileChooser" textAlignment="CENTER" textFill="#37129e" underline="true">
+                           <font>
+                              <Font size="21.0" />
+                           </font>
+                        </JFXButton>
+                        <JFXPasswordField fx:id="des_plain_key" layoutX="413.0" layoutY="278.0" promptText="Secret Key" unFocusColor="#3f14b5">
+                           <font>
+                              <Font size="15.0" />
+                           </font>
+                        </JFXPasswordField>
+                        <JFXTextArea fx:id="des_cipher_text" layoutX="91.0" layoutY="53.0" prefHeight="222.0" prefWidth="541.0" promptText="Click on File Chooser to open .txt file  , set  Secret key --&gt; 8 bytes  then press  encrypt   and your cipher text will appear here        " style="-fx-background-color: #f2f2f2; -fx-background-radius: 40; -fx-border-color: #8c8c8c; -fx-border-radius: 40;" unFocusColor="#1bb915">
                            <font>
                               <Font size="17.0" />
                            </font>
@@ -149,17 +159,12 @@
                               <Insets bottom="20.0" left="30.0" right="30.0" top="20.0" />
                            </padding>
                         </JFXTextArea>
-                        <JFXButton fx:id="des_plain_encrypt" layoutX="180.0" layoutY="244.0" onAction="#des_encryption" prefHeight="45.0" prefWidth="151.0" text="Encrypt" textAlignment="CENTER" textFill="#37129e" underline="true">
+                        <JFXButton fx:id="des_plain_encrypt" disable="true" layoutX="165.0" layoutY="279.0" onAction="#des_encryption" prefHeight="45.0" prefWidth="151.0" text="encrypt" textAlignment="CENTER" textFill="#37129e" underline="true">
                            <font>
                               <Font size="21.0" />
                            </font>
                         </JFXButton>
-                        <JFXPasswordField fx:id="des_plain_key" layoutX="377.0" layoutY="246.0" promptText="Secret Key" unFocusColor="#3f14b5">
-                           <font>
-                              <Font size="15.0" />
-                           </font>
-                        </JFXPasswordField>
-                        <JFXTextArea fx:id="des_cipher_text" layoutX="90.0" layoutY="296.0" prefHeight="207.0" prefWidth="541.0" promptText="your cipher text will appear here " style="-fx-background-color: #f2f2f2; -fx-background-radius: 40; -fx-border-color: #8c8c8c; -fx-border-radius: 40;" unFocusColor="#1bb915">
+                        <JFXTextArea fx:id="des_plain_text" layoutX="101.0" layoutY="321.0" prefHeight="222.0" prefWidth="541.0" promptText="Decryption  of ciphertext will appeare here  (plain text)" style="-fx-background-color: #f2f2f2; -fx-background-radius: 40; -fx-border-color: #8c8c8c; -fx-border-radius: 40;" unFocusColor="#1bb915">
                            <font>
                               <Font size="17.0" />
                            </font>
@@ -167,16 +172,6 @@
                               <Insets bottom="20.0" left="30.0" right="30.0" top="20.0" />
                            </padding>
                         </JFXTextArea>
-                        <JFXButton fx:id="des_cipher_decrypt" layoutX="180.0" layoutY="509.0" onAction="#des_decryption" prefHeight="45.0" prefWidth="151.0" text="Decrypt" textAlignment="CENTER" textFill="#37129e" underline="true">
-                           <font>
-                              <Font size="21.0" />
-                           </font>
-                        </JFXButton>
-                        <JFXPasswordField fx:id="des_cipher_key" layoutX="361.0" layoutY="514.0" promptText="Secret Key" unFocusColor="#3f14b5">
-                           <font>
-                              <Font size="15.0" />
-                           </font>
-                        </JFXPasswordField>
                      </children>
                   </AnchorPane>
                </content>
@@ -186,7 +181,7 @@
             <Cursor fx:constant="HAND" />
          </cursor>
       </JFXTabPane>
-      <Label layoutX="219.0" layoutY="696.0" text="Programed By Mohamed Gomaa Madkour" textFill="#1b0c4a" underline="true">
+      <Label layoutX="219.0" layoutY="696.0" style="-fx-background-color: #adebad;" text="Programed By Mohamed Gomaa Madkour" textFill="#1b0c4a" underline="true">
          <font>
             <Font size="16.0" />
          </font>
