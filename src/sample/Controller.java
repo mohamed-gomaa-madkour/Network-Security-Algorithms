@@ -8,7 +8,10 @@ import javafx.fxml.FXML;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 
+import java.awt.*;
 import java.io.File;
+import java.net.URI;
+import java.net.URISyntaxException;
 import java.nio.ByteBuffer;
 
 public class Controller {
@@ -186,6 +189,28 @@ public class Controller {
 
 
 
+    }
+    @FXML
+    void hyperlink(ActionEvent event){
+
+        try {
+            openWebpage(new URI("https://github.com/mohamed-gomaa-madkour/Network-Security-Algorithms/tree/master"));
+        } catch (URISyntaxException e) {
+            e.printStackTrace();
+        }
+
+    }
+
+
+    public static void openWebpage(URI uri) {
+        Desktop desktop = Desktop.isDesktopSupported() ? Desktop.getDesktop() : null;
+        if (desktop != null && desktop.isSupported(Desktop.Action.BROWSE)) {
+            try {
+                desktop.browse(uri);
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
     }
 
 }
